@@ -60,20 +60,24 @@ class Linked_List :
     while count < index :
       previous_node,current_node = current_node, current_node.next
       count += 1
-    if index == 0 :
+    if (index == 0) and (length > 1):
       self.head = current_node.next
+    elif index == 0 :
+      self.head = Node()
     else :
         previous_node.next = current_node.next
     return current_node.data
   def Remove(self,element) :
     current_node = self.head
     previous_node = current_node
-    while current_node.next != None :
+    if (current_node.data == element) and (self.Length() == 1) :
+      self.head = Node()
+    elif current_node.data == element :
+      self.head = current_node.next
+    while current_node != None :
       if current_node.data == element :
         previous_node.next = current_node.next
         break
       current_node, previous_node = current_node.next, current_node
-    if current_node.data == element :
-      previous_node.next = None
     else :
       raise ValueError
