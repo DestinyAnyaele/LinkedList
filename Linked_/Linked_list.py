@@ -26,10 +26,11 @@ class LinkedList :
       return linked_list
   def Remove(self,element) :
     current_node = self.head
-    previous_node = self.head
+    if current_node.data == element :
+      self.head = self.head.next
     while current_node.next != None :
       if current_node.data == element :
-        self.head = self.head.next
+
         previous_node.next = current_node.next
         return None
       previous_node,current_node = current_node,current_node.next
