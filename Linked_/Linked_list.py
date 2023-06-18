@@ -28,6 +28,7 @@ class LinkedList :
     current_node = self.head
     if current_node.data == element :
       self.head = self.head.next
+      return None
     while current_node.next != None :
       if current_node.data == element :
 
