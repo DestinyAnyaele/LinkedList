@@ -1,4 +1,3 @@
- # Doubly linked list
 class Node :
   def __init__(self,data,prev = None,next = None) :
     self.data = data
@@ -15,7 +14,7 @@ class LinkedList :
     else :
       while current_node.next != None :
         current_node,previous_node = current_node.next,current_node
-      current_node.next = Node(element,previous_node)
+      current_node.next = Node(element,current_node)
   def Display(self) :
     linkedlist = []
     current_node = self.head
@@ -34,3 +33,28 @@ class LinkedList :
         count += 1
       count += 1
       return count
+  def Remove(self,element) :
+    current_node = self.head
+    if self.Length() == 1 :
+      if current_node.data == element :
+        self.head = None
+        return None
+    while current_node.next != None :
+      if current_node.data == element :
+        if current_node.prev == None :
+          self.head = current_node.next
+        elif current_node.next == None :
+          current_node.prev.next = None
+        else :
+          current_node.prev.next = current_node.next
+        return None
+      current_node = current_node.next
+    raise ValueError
+  def Getindex(self,element) :
+    count = 0
+    current_head = self.head
+    
+  def Pop(self,Index) :
+    pass
+  def Insert(self,Index) :
+    pass
