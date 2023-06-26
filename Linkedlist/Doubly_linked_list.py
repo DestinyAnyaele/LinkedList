@@ -43,17 +43,28 @@ class LinkedList :
       if current_node.data == element :
         if current_node.prev == None :
           self.head = current_node.next
-        elif current_node.next == None :
-          current_node.prev.next = None
+          self.head.prev = None
         else :
           current_node.prev.next = current_node.next
+          current_node.next.prev = current_node.prev
         return None
       current_node = current_node.next
+    if current_node.data == element :
+      current_node.prev.next = None
+      return None
     raise ValueError
   def Getindex(self,element) :
-    count = 0
-    current_head = self.head
-    
+    index = 0
+    current_node = self.head
+    if self.Length() >= 1 :
+      while current_node.next != None :
+        if current_node.data == element :
+          return index
+        index += 1
+        current_node = current_node.next
+      if current_node.data == element :
+        return index
+    raise ValueError
   def Pop(self,Index) :
     pass
   def Insert(self,Index) :
