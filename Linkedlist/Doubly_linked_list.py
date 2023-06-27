@@ -8,12 +8,11 @@ class LinkedList :
     self.head = None
   def Append(self,element) :
     current_node = self.head
-    previous_node = current_node
     if current_node == None :
       self.head = Node(element)
     else :
       while current_node.next != None :
-        current_node,previous_node = current_node.next,current_node
+        current_node = current_node.next
       current_node.next = Node(element,current_node)
   def Display(self) :
     linkedlist = []
@@ -72,7 +71,7 @@ class LinkedList :
     if index < 0 :
       index += size
     if (index >= size) or (index < 0) :
-      raise ValueError
+      raise IndexError
     else :
       if (index == 0) and (size == 1) :
         self.head = None
@@ -84,6 +83,22 @@ class LinkedList :
           count += 1
           current_node = current_node.next
         current_node.prev.next = current_node.next
+        if current_node.next != None :
+          current_node.next.prev = current_node.prev
     return current_node.data
   def Insert(self,index,element) :
-    pass
+    size = self.Length()
+    current_node = self.head
+    if index < 0 :
+      index += size
+    if index >= size :
+      self.Append(element)
+      return None
+    elif index < 0 :
+      self.head = Node(element,None,current_node)
+      return None
+    count = 0
+    while count < index :
+      count += 1
+      current_node = current_node.next
+    current_node.prev.next = Node(element,current_node.prev,current_node)
