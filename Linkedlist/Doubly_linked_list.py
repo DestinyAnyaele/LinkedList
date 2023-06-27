@@ -65,7 +65,25 @@ class LinkedList :
       if current_node.data == element :
         return index
     raise ValueError
-  def Pop(self,Index) :
-    pass
-  def Insert(self,Index) :
+  def Pop(self,index = -1) :
+    size = self.Length()
+    current_node = self.head
+    count = 0
+    if index < 0 :
+      index += size
+    if (index >= size) or (index < 0) :
+      raise ValueError
+    else :
+      if (index == 0) and (size == 1) :
+        self.head = None
+      elif (index == 0) :
+        self.head = current_node.next
+        self.head.prev = None
+      else :
+        while count < index :
+          count += 1
+          current_node = current_node.next
+        current_node.prev.next = current_node.next
+    return current_node.data
+  def Insert(self,index,element) :
     pass
