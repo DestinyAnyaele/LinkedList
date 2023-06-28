@@ -6,5 +6,5 @@
 
 - circular singly linked list
 
-To create objects/use linked list do this 
-- ["object = LinkedList()"]
+To create objects/use linked list do this `object = LinkedList()`
+!] [test][https://airtalk.live]
