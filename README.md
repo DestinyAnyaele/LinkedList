@@ -6,5 +6,4 @@
 
 - circular singly linked list
 
-
-[test](https://airtalk.live
+- circular doubly linked list
