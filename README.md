@@ -7,7 +7,4 @@
 - circular singly linked list
 
 
-[![test](https://airtalk.live)
-
-
-hh
+[test](https://airtalk.live
