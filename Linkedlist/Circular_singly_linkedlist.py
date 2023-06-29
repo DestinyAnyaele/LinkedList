@@ -7,16 +7,23 @@ class LinkedList :
     self.head = None
     self.tail = None
   def Append(self,element) :
-    # get the head nods for traversing
-    # get the tail node so to know the last nide when traversing
-    current_node = self.head
     last_node = self.tail
+    current_node = self.head
     if current_node == None :
-      current_node = Node(element)
+      self.head = current_node = Node(element)
       current_node.next = self.head
-      last_node = current_node
+      self.tail = last_node = current_node 
     else :
       while current_node is not last_node :
         current_node = current_node.next
       current_node.next = Node(element,self.head)
-      last_node = current_node.next
+      self.tail = last_node = current_node.next
+  def Display(self) :
+    current_node = self.head
+    last_node = self.tail
+    linkedlist = []
+    while current_node is not last_node :
+      linkedlist.append(current_node.data)
+      current_node = current_node.next
+    linkedlist.append(current_node.data)
+    return linkedlist
