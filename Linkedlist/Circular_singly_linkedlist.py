@@ -27,3 +27,11 @@ class LinkedList :
       current_node = current_node.next
     linkedlist.append(current_node.data)
     return linkedlist
+  def Length(self) :
+    current_node = self.head
+    last_node = self.tail
+    count = 0
+    while current_node is not last_node :
+      current_node = current_node.next
+      count += 1
+    return count + 1
