@@ -49,7 +49,3 @@ class LinkedList :
       current_node = current_node.next
     count += 1
     return count
-
-
-
-
