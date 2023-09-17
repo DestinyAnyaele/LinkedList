@@ -1,3 +1,4 @@
+import fractions
 class Node :
   def __init__(self,data,next = None) :
     self.next = next
@@ -54,3 +55,17 @@ class CSL :
           previous_node.next = self.head
         else :
           previous_node.next = current_node.next
+  def Insert(self,Index,Element) :
+    current_node = self.head
+    if Index == 0 :
+      self.head = Node(Element,current_node)
+    for times in range(Index - 1) :
+      if current_node is not self.tail :
+        current_node = current_node.next
+      else :
+        current_node.next = self.tail = Node(Element,self.head)
+        break
+    else :
+      current_node.next = Node(Element,current_node.next)
+      if self.Length() == Index :
+        self.tail = current_node.next
