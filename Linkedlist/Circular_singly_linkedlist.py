@@ -2,7 +2,7 @@ class Node :
   def __init__(self,data,next = None) :
     self.next = next
     self.data = data
-class LinkedList :
+class CSL :
   def __init__(self) :
     self.head = None
     self.tail = None
