@@ -1,4 +1,3 @@
-import fractions
 class Node :
   def __init__(self,data,next = None) :
     self.next = next
