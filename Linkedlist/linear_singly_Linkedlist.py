@@ -2,7 +2,7 @@ class Node :
   def __init__(self,data) :
     self.data = data
     self.next = None
-class LinkedList :
+class LSL :
   def __init__(self) :
     self.head = None
   def Append(self,data) :
@@ -49,7 +49,3 @@ class LinkedList :
       current_node = current_node.next
     count += 1
     return count
-
-
-
-

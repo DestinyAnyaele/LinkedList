@@ -3,7 +3,7 @@ class Node :
     self.data = data
     self.prev = prev
     self.next = next
-class LinkedList :
+class LDL :
   def __init__(self) :
     self.head = None
   def Append(self,element) :
