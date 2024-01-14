@@ -9,15 +9,15 @@ class CSL :
   def Append(self,element) :
     last_node = self.tail
     current_node = self.head
-    if current_node == None :
-      self.head = current_node = Node(element)
+    if current_node is None :
+      self.head = Node(element)
       current_node.next = self.head
-      self.tail = last_node = current_node 
+      self.tail = current_node 
     else :
       while current_node is not last_node :
         current_node = current_node.next
       current_node.next = Node(element,self.head)
-      self.tail = last_node = current_node.next
+      self.tail = current_node.next
   def Display(self) :
     current_node = self.head
     last_node = self.tail
