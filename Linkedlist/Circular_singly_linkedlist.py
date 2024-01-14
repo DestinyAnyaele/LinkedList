@@ -11,8 +11,8 @@ class CSL :
     current_node = self.head
     if current_node is None :
       self.head = Node(element)
-      current_node.next = self.head
-      self.tail = current_node 
+      self.head.next = self.head
+      self.tail = self.head
     else :
       while current_node is not last_node :
         current_node = current_node.next
@@ -68,3 +68,7 @@ class CSL :
       current_node.next = Node(Element,current_node.next)
       if self.Length() == Index :
         self.tail = current_node.next
+object1 = CSL()
+object1.Append(1)
+object1.Append(3)
+print(object1.Display())
